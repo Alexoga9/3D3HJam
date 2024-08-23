@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cb2wsulfok1xm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxceo"]
+
+[sub_resource type="Sky" id="Sky_0knss"]
+sky_material = SubResource("ProceduralSkyMaterial_hxceo")
+
+[sub_resource type="Environment" id="Environment_j50bh"]
+background_mode = 2
+sky = SubResource("Sky_0knss")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yplxu"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hh0gt"]
+
+[node name="3D main" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer"]
+environment = SubResource("Environment_j50bh")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -23.3252, 6.19583, 0)
+current = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_yplxu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(10.0363, 0, 0, 0, 1.00363, 0, 0, 0, 10.0363, 0, 0, 0)
+mesh = SubResource("PlaneMesh_hh0gt")
+skeleton = NodePath("../..")
