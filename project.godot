@@ -17,7 +17,7 @@ config/icon="res://Assets/icon.svg"
 
 [autoload]
 
-Global="*res://Nodes/global.tscn"
+Global="*res://Nodes/Sistemas/global.tscn"
 
 [display]
 

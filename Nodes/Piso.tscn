@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://cb2wsulfok1xm"]
+[gd_scene load_steps=7 format=3 uid="uid://cb2wsulfok1xm"]
 
-[ext_resource type="PackedScene" uid="uid://c2xuukuqt1uw6" path="res://Nodes/pausa.tscn" id="1_plqek"]
 [ext_resource type="PackedScene" uid="uid://ratdr4d362uo" path="res://Nodes/personaje.tscn" id="1_t3ne5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxceo"]
@@ -31,13 +30,6 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3356, 0)
 velocidad_de_movimiento = 10
 velocidad_salto = 6
-
-[node name="Camera3D" type="Camera3D" parent="Personaje"]
-transform = Transform3D(8.85928e-09, 0.669377, -0.742923, -7.98225e-09, 0.742923, 0.669377, 1, -1.33227e-15, 1.19249e-08, -7.02058, 5.37674, 0)
-current = true
-
-[node name="Pausa" parent="Personaje/Camera3D" instance=ExtResource("1_plqek")]
-visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
