@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwfq28toiy2p"]
+
+[ext_resource type="Material" uid="uid://cbcebpm11surp" path="res://Assets/Texturas_de_prueba/tronco.tres" id="1_7xqio"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4bdst"]
+material = ExtResource("1_7xqio")
+
+[node name="Tronco" type="MeshInstance3D"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_4bdst")

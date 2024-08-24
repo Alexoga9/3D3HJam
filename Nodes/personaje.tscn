@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ratdr4d362uo"]
+[gd_scene load_steps=7 format=3 uid="uid://ratdr4d362uo"]
 
 [ext_resource type="Script" path="res://Scripts/personaje.gd" id="1_dkyx7"]
+[ext_resource type="Resource" uid="uid://cw7pwscbynb1x" path="res://Recursos/Inventario_personaje.tres" id="2_mfikh"]
 [ext_resource type="PackedScene" uid="uid://c2xuukuqt1uw6" path="res://Nodes/UI/pausa.tscn" id="2_vq5m4"]
+[ext_resource type="PackedScene" uid="uid://bjs0wcowldgf8" path="res://Nodes/inventario.tscn" id="4_ik3ts"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3f2ue"]
 
@@ -11,6 +13,7 @@
 script = ExtResource("1_dkyx7")
 velocidad_de_movimiento = 20
 velocidad_salto = 20
+inventario = ExtResource("2_mfikh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_3f2ue")
@@ -24,3 +27,16 @@ current = true
 
 [node name="Pausa" parent="Camera3D" instance=ExtResource("2_vq5m4")]
 visible = false
+
+[node name="Inventario" parent="." instance=ExtResource("4_ik3ts")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 700.0
+offset_bottom = 550.0
+grow_horizontal = 1
+grow_vertical = 1

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="97.895828mm"
+   height="97.895836mm"
+   viewBox="0 0 97.895828 97.895836"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:export-bgcolor="#ffffff00" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="display:inline;fill:#000000;stroke:#1a1a1a;stroke-width:0.258332"
+       id="rect1"
+       width="97.637505"
+       height="97.637505"
+       x="0.12916611"
+       y="0.12916611"
+       inkscape:label="Negro"
+       inkscape:export-filename="rect1.png"
+       inkscape:export-xdpi="25.945946"
+       inkscape:export-ydpi="25.945946" />
+    <rect
+       style="fill:#deaa87;stroke:#1a1a1a;stroke-width:0.271441"
+       id="rect2"
+       width="92.332726"
+       height="92.332726"
+       x="2.7815537"
+       y="2.7815537"
+       inkscape:label="Relleno" />
+    <rect
+       style="fill:#1a1a1a;fill-opacity:1;stroke:#1a1a1a;stroke-width:0.299918;stroke-opacity:0"
+       id="rect3"
+       width="92.407043"
+       height="3.4017692"
+       x="2.7326365"
+       y="91.756874" />
+  </g>
+</svg>

@@ -4,6 +4,8 @@ extends CharacterBody3D
 @export var velocidad_de_movimiento: int 
 @export var velocidad_salto: int 
 
+@export var inventario : Inventario
+
 func _physics_process(delta):
 	movimiento_personaje()
 	

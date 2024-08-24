@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="item_en_inventario" load_steps=3 format=3 uid="uid://d4jq6y34clyx5"]
+
+[ext_resource type="Script" path="res://Recursos/Items/item_en_inventario.gd" id="1_rvdvm"]
+[ext_resource type="Texture2D" uid="uid://cy3qem3aahpkn" path="res://Assets/icon.svg" id="2_mqqag"]
+
+[resource]
+script = ExtResource("1_rvdvm")
+name = "Tronco"
+texture = ExtResource("2_mqqag")
