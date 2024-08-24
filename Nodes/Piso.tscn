@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cb2wsulfok1xm"]
+[gd_scene load_steps=9 format=3 uid="uid://cb2wsulfok1xm"]
 
 [ext_resource type="PackedScene" uid="uid://c2xuukuqt1uw6" path="res://Nodes/pausa.tscn" id="1_plqek"]
 [ext_resource type="PackedScene" uid="uid://ratdr4d362uo" path="res://Nodes/personaje.tscn" id="1_t3ne5"]
+[ext_resource type="PackedScene" uid="uid://cljsx2hy1haft" path="res://Nodes/addon_camara.tscn" id="3_nd0ng"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxceo"]
 
@@ -51,6 +52,21 @@ skeleton = NodePath("../..")
 
 [node name="Personaje" parent="." instance=ExtResource("1_t3ne5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3356, 0)
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.017208, 0.999852, 0, -0.999852, -0.017208, 0, 14.6363, 0)
+
+[node name="AddonCamara" parent="." instance=ExtResource("3_nd0ng")]
+
+[node name="MainCamera3D" parent="AddonCamara" index="0"]
+transform = Transform3D(0.99995, 0, 0, 0, 0.79324, 0.608671, 0, -0.608675, 0.793235, 0.083587, 3.7585, 5.22787)
+
+[node name="PlayerPhantomCamera3D" parent="AddonCamara/Player" index="0"]
+transform = Transform3D(0.99995, 0, 0, 0, 0.79324, 0.608671, 0, -0.608675, 0.793235, 0.083587, 3.7585, 5.22787)
+
+[node name="PlayerCharacterBody3D2" parent="AddonCamara/Player" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.083587, 1.32382, 2.05493)
+
+[editable path="AddonCamara"]
+[editable path="AddonCamara/Player/PlayerCharacterBody3D2"]
