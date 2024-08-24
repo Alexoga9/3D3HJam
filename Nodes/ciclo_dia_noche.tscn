@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://by6tlkbm2ld8s"]
+
+[ext_resource type="Script" path="res://Scripts/ciclo_dia_noche.gd" id="1_gpk0k"]
+
+[node name="CicloDiaNoche" type="Node3D"]
+script = ExtResource("1_gpk0k")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="Timer" to="." method="_ciclo_dia_noche"]

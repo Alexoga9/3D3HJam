@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb2wsulfok1xm"]
+[gd_scene load_steps=7 format=3 uid="uid://cb2wsulfok1xm"]
+
+[ext_resource type="PackedScene" uid="uid://ratdr4d362uo" path="res://Nodes/personaje.tscn" id="1_t3ne5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxceo"]
 
@@ -42,3 +44,9 @@ shape = SubResource("WorldBoundaryShape3D_yplxu")
 transform = Transform3D(10.0363, 0, 0, 0, 1.00363, 0, 0, 0, 10.0363, 0, 0, 0)
 mesh = SubResource("PlaneMesh_hh0gt")
 skeleton = NodePath("../..")
+
+[node name="Personaje" parent="." instance=ExtResource("1_t3ne5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3356, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.017208, 0.999852, 0, -0.999852, -0.017208, 0, 14.6363, 0)
