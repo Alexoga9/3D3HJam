@@ -12,7 +12,7 @@ config_version=5
 
 config/name="3D 3H  Jam"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/icon.svg"
 
 [autoload]
 
@@ -28,3 +28,12 @@ window/stretch/aspect="keep_width"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "orange",
+"res://Nodes/": "blue",
+"res://Scripts/": "gray",
+"res://addons/": "red"
+}

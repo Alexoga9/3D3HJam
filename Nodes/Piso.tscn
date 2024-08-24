@@ -32,7 +32,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -23.3252, 6.19583, 0)
+transform = Transform3D(8.85928e-09, 0.669377, -0.742923, -7.98225e-09, 0.742923, 0.669377, 1, 0, 1.19249e-08, -7.02058, 6.71234, 0)
 current = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
