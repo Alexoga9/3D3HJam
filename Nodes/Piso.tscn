@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cb2wsulfok1xm"]
+[gd_scene load_steps=8 format=3 uid="uid://cb2wsulfok1xm"]
 
+[ext_resource type="PackedScene" uid="uid://c2xuukuqt1uw6" path="res://Nodes/pausa.tscn" id="1_plqek"]
 [ext_resource type="PackedScene" uid="uid://ratdr4d362uo" path="res://Nodes/personaje.tscn" id="1_t3ne5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxceo"]
@@ -34,6 +35,9 @@ render_target_update_mode = 4
 [node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
 transform = Transform3D(8.85928e-09, 0.669377, -0.742923, -7.98225e-09, 0.742923, 0.669377, 1, 0, 1.19249e-08, -7.02058, 6.71234, 0)
 current = true
+
+[node name="Pausa" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D" instance=ExtResource("1_plqek")]
+visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
