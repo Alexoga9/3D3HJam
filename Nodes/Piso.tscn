@@ -3,10 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://c2xuukuqt1uw6" path="res://Nodes/pausa.tscn" id="1_plqek"]
 [ext_resource type="PackedScene" uid="uid://ratdr4d362uo" path="res://Nodes/personaje.tscn" id="1_t3ne5"]
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yplxu"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_hh0gt"]
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxceo"]
 
 [sub_resource type="Sky" id="Sky_0knss"]
@@ -16,33 +12,22 @@ sky_material = SubResource("ProceduralSkyMaterial_hxceo")
 background_mode = 2
 sky = SubResource("Sky_0knss")
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yplxu"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hh0gt"]
+
 [node name="3D main" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.017208, 0.999852, 0, -0.999852, -0.017208, 0, 14.6363, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_yplxu")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(10.0363, 0, 0, 0, 1.00363, 0, 0, 0, 10.0363, 0, 0, 0)
-mesh = SubResource("PlaneMesh_hh0gt")
-skeleton = NodePath("../..")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j50bh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer"]
-environment = SubResource("Environment_j50bh")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
-offset_right = 1920.0
-offset_bottom = 1080.0
-
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(1920, 1080)
-render_target_update_mode = 4
-
 [node name="Personaje" parent="." instance=ExtResource("1_t3ne5")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3356, 0)
 velocidad_de_movimiento = 10
 velocidad_salto = 6
@@ -54,5 +39,12 @@ current = true
 [node name="Pausa" parent="Personaje/Camera3D" instance=ExtResource("1_plqek")]
 visible = false
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.017208, 0.999852, 0, -0.999852, -0.017208, 0, 14.6363, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_yplxu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(10.0363, 0, 0, 0, 1.00363, 0, 0, 0, 10.0363, 0, 0, 0)
+mesh = SubResource("PlaneMesh_hh0gt")
+skeleton = NodePath("../..")
