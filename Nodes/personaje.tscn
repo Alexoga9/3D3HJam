@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://ratdr4d362uo"]
+[gd_scene load_steps=4 format=3 uid="uid://ratdr4d362uo"]
+
+[ext_resource type="Script" path="res://Scripts/personaje.gd" id="1_dkyx7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3f2ue"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1me18"]
 
 [node name="Personaje" type="CharacterBody3D"]
+script = ExtResource("1_dkyx7")
+velocidad_de_movimiento = 20
+velocidad_salto = 20
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_3f2ue")
