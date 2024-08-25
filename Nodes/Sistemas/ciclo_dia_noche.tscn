@@ -1,11 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://by6tlkbm2ld8s"]
+[gd_scene load_steps=5 format=3 uid="uid://by6tlkbm2ld8s"]
 
 [ext_resource type="Script" path="res://Scripts/Sistemas/ciclo_dia_noche.gd" id="1_wt0rt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gi7o8"]
+
+[sub_resource type="Sky" id="Sky_0knss"]
+sky_material = SubResource("ProceduralSkyMaterial_gi7o8")
+
+[sub_resource type="Environment" id="Environment_i7ns2"]
+background_mode = 2
+sky = SubResource("Sky_0knss")
+adjustment_contrast = 1.35
+adjustment_saturation = 0.01
 
 [node name="CicloDiaNoche" type="Node3D"]
 script = ExtResource("1_wt0rt")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 180.0
+autostart = true
+
+[node name="Dia" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.886275, 1)
+light_energy = 3.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 16.0
+shadow_enabled = true
+
+[node name="Noche" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0)
+light_color = Color(0.905882, 0.996078, 1, 1)
+light_energy = 2.0
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i7ns2")
 
 [connection signal="timeout" from="Timer" to="." method="_ciclo_dia_noche"]

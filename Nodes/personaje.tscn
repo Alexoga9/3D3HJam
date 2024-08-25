@@ -9,10 +9,11 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1me18"]
 
-[node name="Personaje" type="CharacterBody3D"]
+[node name="Personaje" type="CharacterBody3D" groups=["Jugador"]]
 script = ExtResource("1_dkyx7")
 velocidad_de_movimiento = 20
 velocidad_salto = 20
+vida = 3
 inventario = ExtResource("2_mfikh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

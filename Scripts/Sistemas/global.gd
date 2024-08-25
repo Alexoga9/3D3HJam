@@ -2,6 +2,7 @@ extends Node
 
 var dinero: int 
 var velocidad_movimiento: int 
+var vida = 3
 
 var axis : Vector2
 

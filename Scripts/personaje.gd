@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-
 @export var velocidad_de_movimiento: int 
 @export var velocidad_salto: int 
+@export var vida : int
 
 @export var inventario : Inventario
 

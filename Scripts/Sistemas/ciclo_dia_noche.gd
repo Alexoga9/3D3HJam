@@ -1,7 +1,10 @@
 extends Node3D
 
-@export var ciclo_diurno = WorldEnvironment
-# Called when the node enters the scene tree for the first time.
+@onready var dia = $Dia
+@onready var noche = $Noche
+@onready var world_environment = $WorldEnvironment
+var de_dia = true
+
 func _ready():
 	pass # Replace with function body.
 
@@ -13,4 +16,11 @@ func _process(delta):
 
 
 func _ciclo_dia_noche():
-	pass # Replace with function body.
+	print (de_dia)
+	de_dia =!de_dia
+	if de_dia:
+		dia.show()
+	else:
+		dia.hide()
+	
+	

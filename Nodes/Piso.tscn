@@ -1,27 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://cb2wsulfok1xm"]
+[gd_scene load_steps=9 format=3 uid="uid://cb2wsulfok1xm"]
 
 [ext_resource type="PackedScene" uid="uid://ratdr4d362uo" path="res://Nodes/personaje.tscn" id="1_t3ne5"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxceo"]
-
-[sub_resource type="Sky" id="Sky_0knss"]
-sky_material = SubResource("ProceduralSkyMaterial_hxceo")
-
-[sub_resource type="Environment" id="Environment_j50bh"]
-background_mode = 2
-sky = SubResource("Sky_0knss")
+[ext_resource type="PackedScene" uid="uid://dr1gtr3h7x1pm" path="res://Nodes/UI/ui.tscn" id="2_haoof"]
+[ext_resource type="PackedScene" uid="uid://cofrf78pdk75a" path="res://Nodes/Comercio/area_comercio.tscn" id="2_snnwc"]
+[ext_resource type="PackedScene" uid="uid://by6tlkbm2ld8s" path="res://Nodes/Sistemas/ciclo_dia_noche.tscn" id="3_4tok7"]
+[ext_resource type="PackedScene" uid="uid://5fj2dt3wclcw" path="res://Nodes/Enemigos/enemigo.tscn" id="5_k5p68"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yplxu"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ky2p0"]
+albedo_color = Color(0, 0, 0, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_hh0gt"]
+material = SubResource("StandardMaterial3D_ky2p0")
 
 [node name="3D main" type="Node3D"]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.017208, 0.999852, 0, -0.999852, -0.017208, 0, 14.6363, 0)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_j50bh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -30,6 +23,8 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3356, 0)
 velocidad_de_movimiento = 10
 velocidad_salto = 6
+
+[node name="UI" parent="Personaje" instance=ExtResource("2_haoof")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -40,3 +35,12 @@ shape = SubResource("WorldBoundaryShape3D_yplxu")
 transform = Transform3D(10.0363, 0, 0, 0, 1.00363, 0, 0, 0, 10.0363, 0, 0, 0)
 mesh = SubResource("PlaneMesh_hh0gt")
 skeleton = NodePath("../..")
+
+[node name="Area_comercio" parent="." instance=ExtResource("2_snnwc")]
+transform = Transform3D(18.6222, 0, 0, 0, 1.31754, 0, 0, 0, 1.41548, 0, 0.694029, -9.26459)
+
+[node name="CicloDiaNoche" parent="." instance=ExtResource("3_4tok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.8133, 0)
+
+[node name="Enemigo" parent="." instance=ExtResource("5_k5p68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.56829, 1.24155, 0)
