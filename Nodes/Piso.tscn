@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cb2wsulfok1xm"]
+[gd_scene load_steps=11 format=3 uid="uid://cb2wsulfok1xm"]
 
 [ext_resource type="PackedScene" uid="uid://ratdr4d362uo" path="res://Nodes/personaje.tscn" id="1_t3ne5"]
 [ext_resource type="PackedScene" uid="uid://dr1gtr3h7x1pm" path="res://Nodes/UI/ui.tscn" id="2_haoof"]
@@ -14,6 +14,11 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_hh0gt"]
 material = SubResource("StandardMaterial3D_ky2p0")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_37whi"]
+size = Vector3(1, 2, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l1w2c"]
+
 [node name="3D main" type="Node3D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -26,12 +31,12 @@ velocidad_salto = 6
 
 [node name="UI" parent="Personaje" instance=ExtResource("2_haoof")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Piso" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Piso"]
 shape = SubResource("WorldBoundaryShape3D_yplxu")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Piso"]
 transform = Transform3D(10.0363, 0, 0, 0, 1.00363, 0, 0, 0, 10.0363, 0, 0, 0)
 mesh = SubResource("PlaneMesh_hh0gt")
 skeleton = NodePath("../..")
@@ -44,3 +49,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.8133, 0)
 
 [node name="Enemigo" parent="." instance=ExtResource("5_k5p68")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.56829, 1.24155, 0)
+
+[node name="Pared" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.74549, 1.24242, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65624, 0, 0)
+shape = SubResource("BoxShape3D_37whi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pared/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_l1w2c")

@@ -5,7 +5,6 @@ extends Control
 @onready var corazon_3 = %Corazon3
 @onready var coins = %Coins
 @onready var game_over = %"Game Over"
-@onready var timer = %Timer
 @onready var color_rect = %ColorRect
 
 
@@ -17,7 +16,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	monedas = Global.dinero
 	coins.text = str(monedas)
 	
