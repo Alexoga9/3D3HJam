@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cb2wsulfok1xm"]
+[gd_scene load_steps=12 format=3 uid="uid://cb2wsulfok1xm"]
 
 [ext_resource type="PackedScene" uid="uid://ratdr4d362uo" path="res://Nodes/personaje.tscn" id="1_t3ne5"]
 [ext_resource type="PackedScene" uid="uid://dr1gtr3h7x1pm" path="res://Nodes/UI/ui.tscn" id="2_haoof"]
 [ext_resource type="PackedScene" uid="uid://cofrf78pdk75a" path="res://Nodes/Comercio/area_comercio.tscn" id="2_snnwc"]
 [ext_resource type="PackedScene" uid="uid://by6tlkbm2ld8s" path="res://Nodes/Sistemas/ciclo_dia_noche.tscn" id="3_4tok7"]
 [ext_resource type="PackedScene" uid="uid://5fj2dt3wclcw" path="res://Nodes/Enemigos/enemigo.tscn" id="5_k5p68"]
+[ext_resource type="PackedScene" uid="uid://ctn2i8f8i2h8f" path="res://Nodes/spawner.tscn" id="6_8ikkr"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yplxu"]
 
@@ -60,3 +61,6 @@ shape = SubResource("BoxShape3D_37whi")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pared/CollisionShape3D"]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("BoxMesh_l1w2c")
+
+[node name="Spawner" parent="." instance=ExtResource("6_8ikkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)

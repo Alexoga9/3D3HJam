@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ratdr4d362uo"]
+[gd_scene load_steps=8 format=3 uid="uid://ratdr4d362uo"]
 
 [ext_resource type="Script" path="res://Scripts/personaje.gd" id="1_dkyx7"]
 [ext_resource type="Resource" uid="uid://cw7pwscbynb1x" path="res://Recursos/Inventario_personaje.tres" id="2_mfikh"]
 [ext_resource type="PackedScene" uid="uid://c2xuukuqt1uw6" path="res://Nodes/UI/pausa.tscn" id="2_vq5m4"]
 [ext_resource type="PackedScene" uid="uid://bjs0wcowldgf8" path="res://Nodes/inventario.tscn" id="4_ik3ts"]
+[ext_resource type="PackedScene" uid="uid://iumjp6cr680d" path="res://Scripts/ataque.tscn" id="5_tr22v"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3f2ue"]
 
@@ -41,3 +42,12 @@ offset_right = 700.0
 offset_bottom = 550.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Ataque" parent="." instance=ExtResource("5_tr22v")]
+transform = Transform3D(3.70137, 0, 0, 0, 1, 0, 0, 0, 3.27375, -2.1833, 0, 0.0693192)
+
+[node name="Timer" type="Timer" parent="Ataque"]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Ataque/Timer" to="." method="ataque_timeout"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://iumjp6cr680d"]
+
+[ext_resource type="Script" path="res://Scripts/ataque.gd" id="1_m204m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nuobw"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8c2y"]
+albedo_color = Color(0.297428, 0.359489, 0.871853, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_mivrc"]
+material = SubResource("StandardMaterial3D_o8c2y")
+
+[node name="Ataque" type="Area3D"]
+script = ExtResource("1_m204m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_nuobw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_mivrc")
+
+[connection signal="area_entered" from="." to="." method="enemigo_entra"]

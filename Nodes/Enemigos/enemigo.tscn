@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://5fj2dt3wclcw"]
+[gd_scene load_steps=4 format=3 uid="uid://5fj2dt3wclcw"]
 
 [ext_resource type="Script" path="res://Scripts/enemigo/enemigo.gd" id="1_qp40m"]
 
@@ -6,26 +6,15 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_e37si"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_es7b3"]
-radius = 0.091791
-height = 0.183582
-
-[node name="CharacterBody3D" type="CharacterBody3D"]
-collision_layer = 0
-collision_mask = 0
+[node name="Enemigo" type="Area3D" groups=["Enemigo"]]
 script = ExtResource("1_qp40m")
-velocidad = 100
+velocidad = 5
 
-[node name="Enemigo" type="Area3D" parent="." groups=["Enemigo"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemigo"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_knq2w")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemigo"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.999991, -0.0035196, 0.00219567, 0.00352381, 0.999992, -0.00192007, -0.00218891, 0.00192777, 0.999996, 0, 0, 0)
 mesh = SubResource("SphereMesh_e37si")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_es7b3")
-
-[connection signal="body_entered" from="Enemigo" to="." method="jugador_entra"]
+[connection signal="body_entered" from="." to="." method="jugador_entra"]
